@@ -22,4 +22,5 @@
     <string name="app_name">Radio Zero</string>
     <string name="listen">Touch speaker to listen</string>
     <string name="stop">Touch speaker to stop</string>
+    <string name="buffering">Buffering, please wait...</string>
 </resources>
