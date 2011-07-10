@@ -19,7 +19,7 @@
  -->
  
 <resources>
-    <string name="app_name">Rádio Zero</string>
-    <string name="listen">Toque no altifalante para ouvir</string>
-    <string name="stop">Toque no altifalante para parar</string>
+    <string name="app_name">Radio Zero</string>
+    <string name="listen">Touch speaker to listen</string>
+    <string name="stop">Touch speaker to stop</string>
 </resources>

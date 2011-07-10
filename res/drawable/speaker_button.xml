@@ -18,8 +18,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>. 
  -->
  
-<resources>
-    <string name="app_name">Rádio Zero</string>
-    <string name="listen">Toque no altifalante para ouvir</string>
-    <string name="stop">Toque no altifalante para parar</string>
-</resources>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/radiozerovolume"
+          android:state_pressed="true" />
+    <item android:drawable="@drawable/radiozerostop" />
+</selector>
+
