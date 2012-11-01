@@ -18,7 +18,6 @@
 
 package org.androidappdev.radiozero;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -33,7 +32,9 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class RadioZero extends Activity {
+import com.actionbarsherlock.app.SherlockActivity;
+
+public class RadioZero extends SherlockActivity {
 	private static final String TAG = "RadioZero";
 
 	private MediaPlayer mp = new MediaPlayer();

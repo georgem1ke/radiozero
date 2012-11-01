@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
     Radio Zero - Android application to listen to Radio Zero.
     Copyright (C) 2011, 2012 Henrique Rocha <hmrocha@gmail.com>
@@ -16,28 +15,33 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>. 
- -->
- 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.androidappdev.radiozero"
-      android:versionCode="1"
-      android:versionName="0.1">
-    <uses-sdk android:minSdkVersion="3" />
-	
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+-->
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
-    	
-        <activity 
-        	android:name=".RadioZero"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.androidappdev.radiozero"
+    android:versionCode="2"
+    android:versionName="0.2" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Sherlock" >
+        <activity
+            android:name=".RadioZero"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-            
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 </manifest>
