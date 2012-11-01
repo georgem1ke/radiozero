@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.RadioZero" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/Theme.RadioZero.ActionBarStyle</item>
+        <item name="actionBarStyle">@style/Theme.RadioZero.ActionBarStyle</item>
+    </style>
+
+    <style name="Theme.RadioZero.ActionBarStyle" parent="Widget.Sherlock.ActionBar">
+        <item name="android:background">@android:color/black</item>
+        <item name="background">@android:color/black</item>
+        <item name="android:titleTextStyle">@style/Theme.RadioZero.ActionBar.TitleTextStyle</item>
+        <item name="titleTextStyle">@style/Theme.RadioZero.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="Theme.RadioZero.ActionBar.TitleTextStyle" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+</resources>
