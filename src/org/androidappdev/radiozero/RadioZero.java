@@ -18,6 +18,8 @@
 
 package org.androidappdev.radiozero;
 
+import net.simonvt.widget.MenuDrawer;
+import net.simonvt.widget.MenuDrawerManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -40,11 +42,15 @@ public class RadioZero extends SherlockActivity {
 	private MediaPlayer mp = new MediaPlayer();
 	private boolean prepared = false;
 
-	/** Called when the activity is first created. */
+    private MenuDrawerManager mMenuDrawer;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+
+        mMenuDrawer = new MenuDrawerManager(this, MenuDrawer.MENU_DRAG_WINDOW);
+        mMenuDrawer.setContentView(R.layout.main);
+        mMenuDrawer.setMenuView(R.layout.menu_scrollview);
 
 		if (!isConnected(getApplicationContext())) {
 			showConnectionError();
