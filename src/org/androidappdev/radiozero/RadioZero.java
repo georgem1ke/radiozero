@@ -18,13 +18,17 @@
 
 package org.androidappdev.radiozero;
 
+import net.simonvt.widget.MenuDrawer;
+import net.simonvt.widget.MenuDrawerManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,11 +44,16 @@ public class RadioZero extends SherlockActivity {
 	private MediaPlayer mp = new MediaPlayer();
 	private boolean prepared = false;
 
-	/** Called when the activity is first created. */
+    private MenuDrawerManager mMenuDrawer;
+    private TextView manif;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+
+        mMenuDrawer = new MenuDrawerManager(this, MenuDrawer.MENU_DRAG_WINDOW);
+        mMenuDrawer.setContentView(R.layout.main);
+        mMenuDrawer.setMenuView(R.layout.menu_scrollview);
 
 		if (!isConnected(getApplicationContext())) {
 			showConnectionError();
@@ -97,6 +106,8 @@ public class RadioZero extends SherlockActivity {
 				}
 			}
 		});
+		
+		addOnClickOnManif();
 
 	}
 
@@ -105,6 +116,23 @@ public class RadioZero extends SherlockActivity {
 		super.onDestroy();
 		this.mp.release();
 		Log.d(TAG, "release()");
+	}
+	
+	private void addOnClickOnManif(){
+		
+		manif = (TextView) findViewById(R.id.manif);
+		
+		manif.setOnClickListener(new OnClickListener() {
+			 
+			@Override
+			public void onClick(View arg0) {
+ 
+			  Intent i = new Intent(getApplicationContext(), Manifesto.class);
+			  startActivity(i);
+ 
+			}
+ 
+		});
 	}
 
 	private void enableSpeaker() {
