@@ -10,11 +10,12 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/item1"
+            android:id="@+id/manif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="manifesto zero"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" 
+            style="@style/Theme.RadioZero.ActionBar.Title"/>
     </LinearLayout>
 
 </ScrollView>

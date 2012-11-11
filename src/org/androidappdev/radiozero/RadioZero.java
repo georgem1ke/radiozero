@@ -23,10 +23,12 @@ import net.simonvt.widget.MenuDrawerManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +45,7 @@ public class RadioZero extends SherlockActivity {
 	private boolean prepared = false;
 
     private MenuDrawerManager mMenuDrawer;
+    private TextView manif;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -103,6 +106,8 @@ public class RadioZero extends SherlockActivity {
 				}
 			}
 		});
+		
+		addOnClickOnManif();
 
 	}
 
@@ -111,6 +116,23 @@ public class RadioZero extends SherlockActivity {
 		super.onDestroy();
 		this.mp.release();
 		Log.d(TAG, "release()");
+	}
+	
+	private void addOnClickOnManif(){
+		
+		manif = (TextView) findViewById(R.id.manif);
+		
+		manif.setOnClickListener(new OnClickListener() {
+			 
+			@Override
+			public void onClick(View arg0) {
+ 
+			  Intent i = new Intent(getApplicationContext(), Manifesto.class);
+			  startActivity(i);
+ 
+			}
+ 
+		});
 	}
 
 	private void enableSpeaker() {
